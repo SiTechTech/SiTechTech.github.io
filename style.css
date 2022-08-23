@@ -1,0 +1,552 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style:none; 
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
+:root{
+    --bg-color: #ffffff;
+    --secound-bg-color: #f9f9f9;
+    --text-color: #fff;
+    --secound-color: #161616;   /*These are kinda like a def(function) we can keep coming back to them and use them like stored crayon*/
+    --main-color:#ff0000;   /*#ef0454*/
+    --other-color : #6a6a6a;
+    --big-font: 5.7rem;
+    --h2-font: 3.8rem;
+    --p-font: 1rem;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    right:0;
+    top:0;
+    z-index: 1000;
+    display: flex;                    /*This is the header or the top of are page it controls all the sizing and lettering placement*/
+    align-items: center;
+    justify-content: space-between;
+    background: #000;
+    padding: 15px 6%;  /*This changes the black heading*/
+}
+
+.logo{
+    font-size: 1.9rem;
+    font-weight: 600;        /*This is are logo sizing*/
+    color: var(--text-color);
+}
+
+span{                          /*This is set on the page when we put <span>folio<span> it sepratated it and allowed just that part to change colors*/
+    color: var(--main-color);  /*These color are set to a certain "class not really class" so when i call them it will turn whatever color i set it to in the html*/
+}
+
+.navlist{
+    display:flex;
+}
+
+.navlist li{
+    position: relative;
+}
+
+.navlist a{
+    color: var(--text-color);    /*This changed the sizeing of the header*/
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 10px 20px;
+}
+
+.navlist a::after{
+    content: '';
+    position: absolute;
+    width: 0;        /*This puts a line under "home aboutme servers etc"*/
+    height: 2px;
+    background: var(--main-color);
+    left: 0;
+    bottom:-4px;
+    transition: ease .40s;
+}
+
+.navlist a:hover::after{  /*This gives a underlining under header*/
+    width:100%
+}
+
+#menu-icon{
+    font-size: 26px;
+    color: var(--text-color);
+    cursor: pointer;   /* Menu icon Gone */
+    z-index: 10001;   
+    display: none; 
+} 
+
+.h-btn i{                   /*This controls are GitHub Button*/ 
+    color: white;
+    font-size: 2.8rem;                             
+    margin-bottom: 18px;
+    cursor: pointer;
+}
+
+section{
+    padding: 120px 16%; /*This for the sections "globals, projects*/
+}
+
+.home{
+    height: 100vh;   /*This is the background of the page*/
+    width: 100%;
+    background: url(images/NewMe2.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;       /*Everything below this controls the text on the left of the screen "Sayyed"*/
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    align-items: center;
+
+}
+
+.home-text{
+    padding: 120px;
+}
+
+.home-text h1{
+    font-size: var(--big-font);
+    color: var(--text-color);
+    line-height: 1.11;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 0 0 25px;
+}
+
+.home-text h4{
+    color: var(--text-color);
+    font-size: 1.5rem;
+    line-height: 1.21;
+    font-weight: 700;
+    margin-bottom: 40px;
+
+}.btn{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 16px 33px;
+    background: var(--main-color);  /*This controls the Button on the home screen*/
+    color: var(--text-color);
+    border-radius: 30px;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    transition: ease .30s;
+}
+
+.btn:hover{
+    transform: translateY(-10px);
+    background: transparent;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+}
+
+.count{
+    display: flex;
+    flex-wrap: wrap;   /*This controls the little text under the button on the home page, change the height on here*/
+    margin-top: 100px;
+}
+
+.count li{
+    margin-right: 55px;
+    font-size: 1rem;   
+    font-weight: 500;     /*This can change the size and color of those letters on the home page*/
+    color: var(--text-color);
+}
+
+.count span{
+    color: var(--text-color);
+    font-weight: 700;           /*This can change the size and color of those letters on the home page*/
+    font-size: 1.8rem;
+}
+
+.about{
+    background: var(--bg-color);
+    display: grid;              /*This moves the text are on about me picture to go infront of it*/
+    grid-template-columns: repeat(2, 2fr);
+    align-items: center;
+    grid: 2rem;
+
+}
+
+.about-image{
+max-width: 100%;
+width: 490px;
+height: auto;
+} 
+
+.about-text h2{
+    font-size: var(--h2-font);          /*This changes the size of the "About Me*/
+    color: var(--secound-color);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+}
+
+.about-text h5{
+    color: var(--secound-color);
+    font-size: 1.3rem;                  /*This changes the size and color of the "About Me*/
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.about-text p{
+    font-size: var(--p-font);
+    font-weight: 400;           /*This changes the size and color of the "About Me*/
+    max-width: 570px;
+    line-height: 1.8;
+    color: var(--other-color);
+    margin-bottom: 2.5rem;
+}
+
+.services{
+    background: var(--secound-bg-color);   /*This is the light grey background for the "skills i offer portion*/
+}
+
+.heading{
+    text-align: center;
+}
+
+.heading h6{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--main-color);   /*This is for the "creative services above the skills i offer"*/
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+.heading h2{
+    font-size: var(--h2-font);
+    color: var(--secound-color);  /*This is the "skills i offer"*/
+    font-weight:700;
+    line-height: 1.1;
+    margin-bottom: 1.6rem;
+}
+
+.heading p{
+    font-size: var(--p-font);
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--other-color);
+} 
+
+.services-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(370px, auto));     /*This puts the text in the middle for all the picture colums*/
+    grid-gap: 2rem;
+    align-items: center;
+    margin-top: 4.4rem;
+} 
+
+.box{
+    background: var(--bg-color);
+    padding: 45px 30px;
+    border-radius: 5px;             /*Back ground of the skills section*/
+    cursor: pointer; 
+    transition: all .35s;
+} 
+
+ .box i{
+    color: var(--main-color);
+    font-size: 2.8rem;                           /*This controls the size an colorof the Skills Portion, then rench, clock, stack*/  
+    margin-bottom: 18px;
+} 
+
+.box h3{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;                        /*This controls the words of the Skills section*/
+    color: var(--secound-color);
+}  
+
+.box p{
+    color: var(--other-color);
+    font-size: 16px;      /*This is the text for the services part*/
+    line-height: 30px;
+
+}
+
+.box:hover{
+    box-shadow: 0px 20px 30px rgb(55 7 23 /7%);
+}
+
+
+.blog-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    grid-gap: 2rem;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 4.4rem;
+}
+
+.blog-content .row img{
+    max-width: 100%;
+    width:600px;
+    height: auto;
+}
+
+.row{
+    padding: 0 0 30px 0;
+    background: var(--secound-bg-color);
+    border-radius: 10px;
+    transition: all .35s;
+}
+
+.row p{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--other-color);
+    margin: 10px 0px 8px 25px;
+}
+
+.row h3{
+    font-size: 22px;
+    line-height: 1.45;
+    font-weight: 600;       /*This is the words for the blog*/
+    transition: all .35s;
+    margin: 10px 0px 8px 25px;
+    color: var(--secound-color);
+}
+
+.row h3:hover{
+    color: var(--main-color);
+}
+
+.row a{
+    font-size: var(--p-font);
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--other-color);
+    border-bottom: 2px solid transparent;
+    transition: all .35s;
+    margin: 10px 0px 8px 25px;
+}
+
+.row a:hover{
+    border-bottom: 2px solid var(--main-color);
+    color: var(--main-color);
+}
+
+.copyright{
+    background: var(--bg-color);
+    padding: 20px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copyright p{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--other-color)
+}
+
+.icon a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-color);
+    width: 35px;
+    height: 35px;
+    margin: 0px 5px;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    border-radius: 50%;
+    transition: all .40s;
+}
+
+.icon a:hover{
+    transform: translateY(-5px);
+}
+
+@media (max-width: 1380px){
+    header{
+        padding: 18px 2%;
+        transition: .2s;
+    }
+    section{
+        padding: 80px 2%;
+        transition: .3s;
+    }
+    :root{
+        --big-font: 4.7rem;
+        --h2-font: 2.5rem;
+    }.home-text h4{
+        font-size: 1.2rem;
+    }
+    .count span{
+        font-size: 1.3rem;
+    }
+}
+
+
+@media (max-width: 1120px){
+    header{
+        padding: 14px 2%;
+    }
+    .home{
+        height: 85vh;
+    }
+    #menu-icon{
+        display: block;
+    }
+    .navlist{
+        position: absolute;
+        top: -600px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--main-color);
+        text-align: left;
+        transition: all .35s ease;
+    }
+    .navlist a{
+        display: block;
+        padding: 1rem;
+        margin: 1.2rem;
+        border-left: 2px solid var(--text-color);
+    }
+    .navlist a:hover{
+        background: var(--text-color);
+        color: var(--secound-color);
+        border: none;
+    }
+    .navlist a::after{
+        display: none;
+    }
+    .navlist.active{
+        top: 100%;
+    }
+}
+
+@media (max-width: 770px){
+    .about{
+        grid-template-columns: 1fr;
+    }
+    .about-image{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .contact{
+        text-align: center;
+    }
+    .contact h2{
+        font-size: 1.4rem;
+    }
+    .copyright{
+        justify-content: center;
+        text-align: center;
+    }
+    .copyright p{
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 750px){
+    :root{
+        --big-font: 3.5rem;
+        --h2-font: 1.9rem;
+        --p-font: 0.9rem;
+    }
+}
+
+@media (max-width: 630px){
+    section{
+        padding: 90px 4%;
+    }
+    header{
+        padding: 14px 4%;
+    }
+    :root{
+        --big-font: 3.2rem;
+        --h2-font: 1.8rem;
+        --p-font: 0.9rem;
+    }
+    .home-text h4{
+        font-size: 1rem;
+    }
+    .count li{
+        margin-bottom: 20px;
+       font-size: 1.2rem;
+    }
+    .count span{
+        font-size: 1.2rem;
+    }
+}
+
+
+
+/* Contact Info */
+
+.contact{
+    background: var(--secound-bg-color);  
+}
+
+.contact-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+    grid-gap: 2rem;
+    align-items: center;
+    text-align: center;
+    margin-top: 4rem;
+    color: var(--secound-color);
+}
+
+.con-box{
+    padding:40px 25px;
+    border-radius: 10px;
+    background: var(--bg-color);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    font-size: 22px;
+}
+
+.con i{
+    color: var(--main-color);
+    font-size: 2.8rem;                           /*This controls the size an color of the Skills Portion, then rench, clock, stack*/  
+    margin-bottom: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
